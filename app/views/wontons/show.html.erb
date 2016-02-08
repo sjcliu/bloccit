@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wonton.title %>
+</p>
+
+<p>
+  <strong>Copy:</strong>
+  <%= @wonton.copy %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @wonton.price %>
+</p>
+
+<%= link_to 'Edit', edit_wonton_path(@wonton) %> |
+<%= link_to 'Back', wontons_path %>

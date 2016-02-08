@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wontons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Copy</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wontons.each do |wonton| %>
+      <tr>
+        <td><%= wonton.title %></td>
+        <td><%= wonton.copy %></td>
+        <td><%= wonton.price %></td>
+        <td><%= link_to 'Show', wonton %></td>
+        <td><%= link_to 'Edit', edit_wonton_path(wonton) %></td>
+        <td><%= link_to 'Destroy', wonton, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wonton', new_wonton_path %>
