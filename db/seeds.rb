@@ -18,6 +18,10 @@ posts = Post.all
   )
 end
 
+puts "#{Poat.count}"
+Post.find_or_create_by(title: "The land befor time", body: "Which quote is this from")
+uts "#{Poat.count}"
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
