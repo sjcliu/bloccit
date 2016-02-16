@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sponsored_post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @sponsored_post.body %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sponsored_post.price %>
+</p>
+
+<%= link_to 'Edit', edit_sponsored_post_path(@sponsored_post) %> |
+<%= link_to 'Back', sponsored_posts_path %>
