@@ -17,6 +17,12 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
+
+  after_create do
+    # this line of code will be called
+    Vote.create(post: self, user: self.user, value: 1)
+  end
+
   def up_votes
     votes.where(value: 1).count
   end
