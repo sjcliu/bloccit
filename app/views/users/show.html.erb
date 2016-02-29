@@ -11,13 +11,29 @@
       <div class="media-body">
         <h2 class="media-heading"><%= @user.name %></h2>
         <small>
-          <%= pluralize(@user.posts.count, 'post') %>,
-          <div class="js-comments-count"><%= pluralize(@user.comments.count, 'comment') %></div>
+          <%= display_posts_count(@user) %>,
+          <div class="js-comments-count"><%= comments(@user) %></div>
         </small>
       </div>
     </div>
   </div>
 </div>
+
+
+<h2>Favorites</h2>
+
+<ul>
+<% current_user.favorites.each do |f|  %>
+  <li>
+  <%= link_to  [f.post.topic, f.post] do %>
+    <%= image_tag f.post.user.avatar_url(24) %>
+    <%= f.post.title %>
+    Comments Count: <%= f.post.comments.count %>
+    <%= f.post.votes.count %>
+  <% end %>
+</li>
+<% end %>
+</ul>
 
 <h2>Posts</h2>
 <%= render @user.posts %>
